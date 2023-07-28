@@ -62,7 +62,7 @@ def main():
     array = input().split(" ")
     for x in range (0, len(array)):
         array[x] = int(array[x])
-
+    print(array)
     tc1 = Solution()
     ans = tc1.stonks(array)
     print(ans)
