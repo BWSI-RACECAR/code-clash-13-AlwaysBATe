@@ -48,7 +48,7 @@ class Solution:
             for i in range(0, len(prices)-1):
                 if prices[i] < min:
                     min = prices[i]
-                if prices[i] > prices[i+1]:
+                elif prices[i] > prices[i+1]:
                     ans += prices[i] - min
                     min = prices[i]
                     cnt += 1
