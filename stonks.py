@@ -44,12 +44,16 @@ class Solution:
             min = 10000000
             ans = 0
             prices.append(-1)
+            cnt = 0
             for i in range(0, len(prices)-1):
                 if prices[i] < min:
                     min = prices[i]
                 if prices[i] > prices[i+1]:
                     ans += prices[i] - min
                     min = prices[i]
+                    cnt += 1
+                if cnt == 2:
+                    break
             return ans
             #TODO: Write code below to returnn an int with the solution to the prompt.
             pass
