@@ -43,6 +43,7 @@ class Solution:
             #return type: int
             min = 10000000
             ans = 0
+            prices.append(-1)
             for i in range(0, len(prices)-1):
                 if prices[i] < min:
                     min = prices[i]
