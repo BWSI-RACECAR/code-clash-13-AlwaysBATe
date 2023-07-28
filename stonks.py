@@ -41,20 +41,20 @@ class Solution:
     def stonks(self, prices):
             #type prices: list of int
             #return type: int
+            p = [0,0]
             min = 10000000
             ans = 0
             prices.append(-1)
-            cnt = 0
             for i in range(0, len(prices)-1):
                 if prices[i] < min:
                     min = prices[i]
                 elif prices[i] > prices[i+1]:
-                    ans += prices[i] - min
-                    min = prices[i]
-                    cnt += 1
-                if cnt == 2:
-                    break
-            return ans
+                    if p[0] > p[1]:
+                        p[0], p[1] = p[1], p[0]
+                    if prices[i] - min > p[0]:
+                        p[0] = prices[i] - min
+                        min = prices[i]
+            return p[0] + p[1]
             #TODO: Write code below to returnn an int with the solution to the prompt.
             pass
 
