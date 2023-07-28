@@ -48,7 +48,7 @@ class Solution:
                     min = prices[i]
                 if prices[i] > prices[i+1]:
                     ans += prices[i] - min
-                    min = prices[i+1]
+                    min = prices[i]
             return ans
             #TODO: Write code below to returnn an int with the solution to the prompt.
             pass
