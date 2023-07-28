@@ -41,7 +41,7 @@ class Solution:
     def stonks(self, prices):
             #type prices: list of int
             #return type: int
-            min = 1000
+            min = 10000000
             ans = 0
             for i in range(0, len(prices)-1):
                 if prices[i] < min:
