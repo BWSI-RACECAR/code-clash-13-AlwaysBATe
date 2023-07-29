@@ -36,26 +36,24 @@ Then, buy during hour 6 (price = 0), sell during hour 8 (price = 8), net profit 
 Total profit = 4 + 8 = 12.
 
 """
-
 class Solution:
+    def thing(self, price):
+        ans = 0
+        mi = 10000
+        for i in range(0, len(price)):
+            mi = min(mi, price[i])
+            ans = max(ans, price[i] - mi)
+        return ans
     def stonks(self, prices):
             #type prices: list of int
             #return type: int
-            p = [0,0]
-            min = 10000000
+            a = 0
             ans = 0
-            prices.append(-1)
-            for i in range(0, len(prices)-1):
-                if prices[i] < min:
-                    min = prices[i]
-                elif prices[i] > prices[i+1]:
-                    if p[0] > p[1]:
-                        p[0], p[1] = p[1], p[0]
-                    if prices[i] - min > p[0]:
-                        p[0] = prices[i] - min
-                        min = prices[i]
-            return p[0] + p[1]
+            for i in range(0, len(prices)):
+                a = self.thing(prices[0:i]) + self.thing(prices[i:])
+                ans = max(a, ans)
             #TODO: Write code below to returnn an int with the solution to the prompt.
+            return ans
             pass
 
 def main():
